@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<LangVersion>10</LangVersion>
-		<Version>0.1.0</Version>
+		<Version>0.1.1</Version>
 		<PackageId>Junetic.Common</PackageId>	
 		<Authors>Junetic</Authors>
 		<PackageDescription>Contains common utilities and extensions</PackageDescription>
@@ -14,6 +14,7 @@
 		<PackageTags>Junetic</PackageTags>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>

@@ -1,4 +1,5 @@
-﻿namespace Junetic.Common.Abstractions;
+﻿// ReSharper disable UnusedType.Global
+namespace Junetic.Common.Abstractions;
 
 /// <summary>
 /// Used for configuration class for usage with Options pattern,
