@@ -12,6 +12,8 @@
 		<Authors>Zankomag</Authors>
 		<Copyright>Copyright © Zankomag 2022</Copyright>
 		<PackageTags>Junetic</PackageTags>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
