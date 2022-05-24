@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  build:
+  build-test:
     runs-on: ubuntu-latest
     env:
       PROJECT_NAME: Junetic.Common
