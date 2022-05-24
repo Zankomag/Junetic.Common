@@ -10,7 +10,7 @@ branches:
     increment: Minor
     tag: alpha
   release:
-    increment: Minor
+    increment: Major
     tag: beta
     is-release-branch: false
   hotfix:
