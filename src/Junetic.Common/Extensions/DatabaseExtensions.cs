@@ -12,6 +12,10 @@ public static class DatabaseExtensions {
 	/// <param name="itemCount"></param>
 	/// <param name="pageSize"></param>
 	/// <returns></returns>
-	public static int PageCount(this int itemCount, int pageSize) => (int)Math.Ceiling(itemCount / (double)pageSize);
+	public static long PageCount(this long itemCount, int pageSize) {
+		if(itemCount <= 0) throw new ArgumentException("parameter must be greater than zero", nameof(itemCount));
+		if(pageSize <= 0) throw new ArgumentException("parameter must be greater than zero", nameof(pageSize));
+		return (long)Math.Ceiling(itemCount / (double)pageSize);
+	}
 
 }

@@ -6,6 +6,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{98EB92D1-BBC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6381AFF5-1CF4-4452-973D-CBBE8092375B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Junetic.Common.UnitTests", "test\Junetic.Common.UnitTests\Junetic.Common.UnitTests.csproj", "{877A65F9-756C-4F38-91EC-DEAB90BE270F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,8 +18,13 @@ Global
 		{0BAEC8E8-EBEA-4277-A50D-5712CA0F5779}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BAEC8E8-EBEA-4277-A50D-5712CA0F5779}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BAEC8E8-EBEA-4277-A50D-5712CA0F5779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877A65F9-756C-4F38-91EC-DEAB90BE270F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877A65F9-756C-4F38-91EC-DEAB90BE270F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877A65F9-756C-4F38-91EC-DEAB90BE270F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877A65F9-756C-4F38-91EC-DEAB90BE270F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0BAEC8E8-EBEA-4277-A50D-5712CA0F5779} = {98EB92D1-BBC2-49A0-884B-8D90AB51F608}
+		{877A65F9-756C-4F38-91EC-DEAB90BE270F} = {6381AFF5-1CF4-4452-973D-CBBE8092375B}
 	EndGlobalSection
 EndGlobal
