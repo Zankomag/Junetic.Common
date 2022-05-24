@@ -2,6 +2,17 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>10</LangVersion>
+		<Version>0.1.0</Version>
+		<PackageId>Junetic.Common</PackageId>	
+		<Authors>Junetic</Authors>
+		<PackageDescription>Contains common utilities and extensions</PackageDescription>
+		<RepositoryUrl>https://github.com/Zankomag/Junetic.Common.git</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/Zankomag/Junetic.Common</PackageProjectUrl>
+		<Authors>Zankomag</Authors>
+		<Copyright>Copyright © Zankomag 2022</Copyright>
+		<PackageTags>Junetic</PackageTags>
+		
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
