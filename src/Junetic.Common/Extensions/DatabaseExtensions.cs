@@ -1,6 +1,9 @@
 ﻿namespace Junetic.Common.Extensions; 
 
 //todo add unit tests
+/// <summary>
+/// Extensions for working with database queries
+/// </summary>
 public static class DatabaseExtensions {
 
 	/// <summary>

@@ -5,8 +5,12 @@ using Microsoft.Extensions.Options;
 
 namespace Junetic.Common.Extensions; 
 
+/// <summary></summary>
 public static class ServiceCollectionExtensions {
 
+	/// <summary>
+	/// Adds, configures and validates options section from appsettings.Env.json file
+	/// </summary>
 	public static IServiceCollection AddOptions<TOptions>(this IServiceCollection services, IConfiguration configuration, string sectionName) where TOptions : class {
 		var configSection = configuration.GetSection(sectionName);
 		services.Configure<TOptions>(configSection);
@@ -14,6 +18,9 @@ public static class ServiceCollectionExtensions {
 		return services;
 	}
 
+	/// <summary>
+	/// Adds <see cref="OptionsValidator{TOptions}"/>
+	/// </summary>
 	public static IServiceCollection AddOptionsValidator<TOptions>(this IServiceCollection services) where TOptions : class {
 		services.AddSingleton<IValidateOptions<TOptions>, OptionsValidator<TOptions>>();
 		return services;
