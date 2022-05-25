@@ -1,6 +1,6 @@
 using Junetic.Common.Extensions;
 
-namespace Jumetic.Common.UnitTests;
+namespace Junetic.Common.UnitTests;
 
 public class DatabaseExtensionsTests {
 
