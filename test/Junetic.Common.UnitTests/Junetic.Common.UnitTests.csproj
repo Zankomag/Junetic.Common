@@ -8,7 +8,7 @@
 
 		<IsPackable>false</IsPackable>
 
-		<RootNamespace>Jumetic.Common.UnitTests</RootNamespace>
+		<RootNamespace>Junetic.Common.UnitTests</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>

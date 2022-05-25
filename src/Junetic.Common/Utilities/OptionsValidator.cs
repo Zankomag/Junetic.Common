@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Junetic.Common.Abstractions;
 using Microsoft.Extensions.Options;
 
 namespace Junetic.Common.Utilities;
@@ -6,7 +7,7 @@ namespace Junetic.Common.Utilities;
 /// <summary>
 /// Validates options by fields Data Annotations  
 /// </summary>
-public sealed class OptionsValidator<TOptions> : IValidateOptions<TOptions> where TOptions : class {
+public sealed class OptionsValidator<TOptions> : IValidateOptions<TOptions> where TOptions : class, ISettings {
 
 	//todo check if it even works line for throwing on missing required fields and whole blocks (config classes)
 
