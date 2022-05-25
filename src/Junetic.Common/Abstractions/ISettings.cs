@@ -8,7 +8,8 @@ namespace Junetic.Common.Abstractions;
 public interface ISettings {
 
 	/// <summary>
-	/// The name of configuration section in appsettings.json file
+	/// The name of configuration section in appsettings.json file. If you think it matches settings class name - 
+	/// use nameof(OptionsClass) for section name
 	/// </summary>
 	abstract static string SectionName { get; }
 
