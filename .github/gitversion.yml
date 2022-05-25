@@ -1,4 +1,4 @@
-﻿mode: ContinuousDeployment
+﻿mode: Mainline
 branches:
   master:
     tag: ''
@@ -7,13 +7,16 @@ branches:
       - master
     is-release-branch: true
   feature:
+    mode: ContinuousDeployment
     increment: Minor
     tag: alpha
   release:
+    mode: ContinuousDeployment
     increment: Major
     tag: beta
     is-release-branch: false
   hotfix:
+    mode: ContinuousDeployment
     increment: Patch
     tag: beta
 ignore:
