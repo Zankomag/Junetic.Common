@@ -21,7 +21,6 @@ jobs:
         with:
           fetch-depth: 0
 
-
       - name: Restore dependencies
         run: dotnet restore
 
