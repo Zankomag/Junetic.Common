@@ -2,22 +2,22 @@
 branches:
   master:
     tag: ''
-    increment: inherit
+    increment: None
     source-branches:
       - master
     is-release-branch: true
   feature:
     mode: ContinuousDeployment
     increment: Minor
-    tag: alpha
+    tag: useBranchName
   release:
     mode: ContinuousDeployment
     increment: Major
-    tag: beta
+    tag: useBranchName
     is-release-branch: false
   hotfix:
     mode: ContinuousDeployment
     increment: Patch
-    tag: beta
+    tag: useBranchName
 ignore:
   sha: [ ]
