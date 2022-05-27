@@ -14,6 +14,8 @@ public sealed class OptionsValidator<TOptions> : IValidateOptions<TOptions> wher
 
 	/// <inheritdoc />
 	public ValidateOptionsResult Validate(string name, TOptions options) {
+		//todo do we need to check options for null?
+		
 		ValidationContext validationContext = new ValidationContext(options);
 		List<ValidationResult> validationResults = new List<ValidationResult>();
 		bool noValidationErrorsOccured = Validator.TryValidateObject(options, validationContext, validationResults, true);
