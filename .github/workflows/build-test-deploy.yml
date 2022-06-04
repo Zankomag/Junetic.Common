@@ -7,6 +7,8 @@ on:
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
+    env:
+      OWNER: ${{ github.repository_owner }}
     steps:
       - name: Check out Code
         uses: actions/checkout@v2
@@ -49,4 +51,4 @@ jobs:
         run: dotnet pack ${{ steps.dotenv.outputs.project_name }}.sln --configuration release -o:package /p:PackageVersion=${{ steps.version.outputs.version }}
 
       - name: Push generated package to GitHub registry
-        run: dotnet nuget push ./package/*.nupkg  --source "https://nuget.pkg.github.com/${{ steps.dotenv.outputs.owner }}/index.json"  --api-key ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet nuget push ./package/*.nupkg  --source "https://nuget.pkg.github.com/${{ env.OWNER }}/index.json"  --api-key ${{ secrets.GITHUB_TOKEN }}
