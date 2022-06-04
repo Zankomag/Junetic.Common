@@ -17,6 +17,5 @@ public static class DatabaseExtensions {
 		if(pageSize <= 0) throw new ArgumentException("parameter must be greater than zero", nameof(pageSize));
 		return (long)Math.Ceiling(itemCount / (double)pageSize);
 	}
-
 	
 }
