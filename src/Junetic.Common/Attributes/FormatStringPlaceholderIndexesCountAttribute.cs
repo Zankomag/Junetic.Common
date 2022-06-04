@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Junetic.Common.Attributes; 
 
+//todo add unit tests
 /// <summary>
 ///     Validates if a template for String.Format contains required quantity of variable placeholders ({0}, {1} etc.)
 /// </summary>
