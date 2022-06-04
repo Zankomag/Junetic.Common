@@ -27,8 +27,8 @@ jobs:
         with:
           branch: master
           tag_prefix: "BREAKING CHANGE: "
-          major_pattern: "/^feat(?<scope>\(\w+\)?(?=!:\s))?(?<breaking>!).*/"
-          minor_pattern: "/^feat(?<scope>\(\w+\)?((?=:\s))).*/"
+          major_pattern: /^feat(\(\w+\)?(?=!:\s))?(?<breaking>!).*/
+          minor_pattern: /^feat(\(\w+\)?((?=:\s))).*/
           format: "${major}.${minor}.${patch}"
           change_path: "src/Junetic.Common"
           search_commit_body: true
