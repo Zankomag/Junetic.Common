@@ -23,7 +23,7 @@ jobs:
 
       - name: Determine semantic version
         id: version
-        uses: PaulHatch/semantic-version@5.0.0
+        uses: PaulHatch/semantic-version@v4.0.2
         with:
           branch: master
           tag_prefix: "BREAKING CHANGE: "
