@@ -7,19 +7,22 @@ on:
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
-    env:
-      PROJECT_NAME: Junetic.Common
-      OWNER: ${{ github.repository_owner }}
     steps:
+      - name: Check out Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  
+        
+      - name: Setup environment variables
+        id: dotenv
+        uses: falti/dotenv-action@v0.2.8
+        with:
+          path: .github/.env
+        
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
-
-      - name: Check out Code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Determine semantic version
         id: version
@@ -36,14 +39,14 @@ jobs:
         run: dotnet restore
 
       - name: Build dotnet
-        run: dotnet build ${{ env.PROJECT_NAME }}.sln --configuration release /p:Version=${{ steps.version.outputs.version }} --no-restore
+        run: dotnet build ${{ steps.dotenv.outputs.project_name }}.sln --configuration release /p:Version=${{ steps.version.outputs.version }} --no-restore
 
 
       - name: Run Tests
-        run: dotnet test ${{ env.PROJECT_NAME }}.sln --configuration Release /p:Version=${{ steps.version.outputs.version }} --no-build --verbosity normal
+        run: dotnet test ${{ steps.dotenv.outputs.project_name }}.sln --configuration Release /p:Version=${{ steps.version.outputs.version }} --no-build --verbosity normal
 
       - name: Package nuget
-        run: dotnet pack ${{ env.PROJECT_NAME }}.sln --configuration release -o:package /p:PackageVersion=${{ steps.version.outputs.version }}
+        run: dotnet pack ${{ steps.dotenv.outputs.project_name }}.sln --configuration release -o:package /p:PackageVersion=${{ steps.version.outputs.version }}
 
       - name: Push generated package to GitHub registry
-        run: dotnet nuget push ./package/*.nupkg  --source "https://nuget.pkg.github.com/${{ env.OWNER }}/index.json"  --api-key ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet nuget push ./package/*.nupkg  --source "https://nuget.pkg.github.com/${{ steps.dotenv.outputs.owner }}/index.json"  --api-key ${{ secrets.GITHUB_TOKEN }}
