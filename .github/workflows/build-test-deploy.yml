@@ -26,7 +26,7 @@ jobs:
         uses: PaulHatch/semantic-version@v4.0.2
         with:
           branch: master
-          tag_prefix: "BREAKING CHANGE: "
+          tag_prefix: "v"
           major_pattern: /^feat(\(\w+\)?(?=!:\s))?(?<breaking>!).*/
           minor_pattern: /^feat(\(\w+\)?((?=:\s))).*/
           format: "${major}.${minor}.${patch}"
