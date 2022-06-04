@@ -1,5 +1,8 @@
 ﻿namespace Junetic.Common.Utilities;
 
+/// <summary>
+/// Helps determining name of environment application is running in
+/// </summary>
 public static class EnvironmentWrapper {
 
 	/// <summary>
