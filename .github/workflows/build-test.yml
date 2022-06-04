@@ -8,6 +8,11 @@ jobs:
   build-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      
       - name: Setup environment variables
         id: dotenv
         uses: falti/dotenv-action@v0.2.8
@@ -18,11 +23,6 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
-
-      - name: Check out Code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Restore dependencies
         run: dotnet restore
