@@ -26,12 +26,11 @@ jobs:
         uses: PaulHatch/semantic-version@v4.0.2
         with:
           branch: master
-          tag_prefix: "BREAKING CHANGE: "
+          tag_prefix: "v"
           major_pattern: /^feat(\(\w+\)?(?=!:\s))?(?<breaking>!).*/
           minor_pattern: /^feat(\(\w+\)?((?=:\s))).*/
           format: "${major}.${minor}.${patch}"
           change_path: "src/Junetic.Common"
-          search_commit_body: true
 
       - name: Restore dependencies
         run: dotnet restore
