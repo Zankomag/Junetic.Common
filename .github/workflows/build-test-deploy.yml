@@ -32,10 +32,9 @@ jobs:
         with:
           branch: master
           tag_prefix: "v"
-          major_pattern: /^feat(\(\w+\)?(?=!:\s))?(?<breaking>!).*/
-          minor_pattern: /^feat(\(\w+\)?((?=:\s))).*/
+          major_pattern: "feat!: "
+          minor_pattern: "feat: "
           format: "${major}.${minor}.${patch}"
-          change_path: "src/Junetic.Common"
 
       - name: Restore dependencies
         run: dotnet restore
