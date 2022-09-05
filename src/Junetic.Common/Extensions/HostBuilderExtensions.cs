@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using Junetic.Common.Abstractions;
+using JetBrains.Annotations;
 using Junetic.Common.Utilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +11,7 @@ namespace Junetic.Common.Extensions;
 /// <summary>
 ///     Extensions to emulate a typical "Startup.cs" pattern for <see cref="IHostBuilder" />
 /// </summary>
+[PublicAPI]
 public static class HostBuilderExtensions {
 
 	/// <summary>

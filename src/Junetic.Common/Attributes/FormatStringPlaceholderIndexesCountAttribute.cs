@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 
 namespace Junetic.Common.Attributes; 
 
@@ -8,6 +9,7 @@ namespace Junetic.Common.Attributes;
 /// <summary>
 ///     Validates if a template for String.Format contains required quantity of variable placeholders ({0}, {1} etc.)
 /// </summary>
+[PublicAPI]
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
 public class FormatStringPlaceholderIndexesCountAttribute : ValidationAttribute {
 
@@ -33,7 +35,7 @@ public class FormatStringPlaceholderIndexesCountAttribute : ValidationAttribute 
 	}
 
 	/// <inheritdoc />
-	protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
+	protected override ValidationResult? IsValid(object? value, ValidationContext validationContext) {
 		if(value is not string format)
 			return ValidationResult.Success;
 
@@ -61,7 +63,7 @@ public class FormatStringPlaceholderIndexesCountAttribute : ValidationAttribute 
 	/// <summary>
 	///     Checks if unmatched to regex substrings contain curvy braces that are unescaped and are not a part of a placeholder
 	/// </summary>
-	private ValidationResult AreUnmatchedSubstringsValid(string format, MatchCollection matches) {
+	private ValidationResult? AreUnmatchedSubstringsValid(string format, MatchCollection matches) {
 		const string validationErrorFormat = @"{0} contains {{ or }} that are not a part of a placeholder and are not escaped";
 		foreach(var substring in GetUnmatchedRegexSubstrings(format, matches)) {
 			var doubleBraceMatches = doubleCurlyBracesRegex.Matches(substring);

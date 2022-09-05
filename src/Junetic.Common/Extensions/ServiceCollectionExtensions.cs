@@ -1,4 +1,5 @@
-﻿using Junetic.Common.Abstractions;
+﻿using JetBrains.Annotations;
+using Junetic.Common.Abstractions;
 using Junetic.Common.Utilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Options;
 namespace Junetic.Common.Extensions; 
 
 /// <summary></summary>
+[PublicAPI]
 public static class ServiceCollectionExtensions {
 
 	/// <summary>
