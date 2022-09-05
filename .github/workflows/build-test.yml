@@ -23,6 +23,16 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
+          
+      - name: Determine semantic version
+        id: version
+        uses: PaulHatch/semantic-version@v4.0.2
+        with:
+          branch: master
+          tag_prefix: "v"
+          major_pattern: "feat!: "
+          minor_pattern: "feat: "
+          format: "${major}.${minor}.${patch}"
 
       - name: Restore dependencies
         run: dotnet restore
