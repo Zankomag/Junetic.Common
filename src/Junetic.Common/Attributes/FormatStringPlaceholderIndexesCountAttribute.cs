@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 
 namespace Junetic.Common.Attributes; 
 
@@ -8,6 +9,7 @@ namespace Junetic.Common.Attributes;
 /// <summary>
 ///     Validates if a template for String.Format contains required quantity of variable placeholders ({0}, {1} etc.)
 /// </summary>
+[PublicAPI]
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
 public class FormatStringPlaceholderIndexesCountAttribute : ValidationAttribute {
 

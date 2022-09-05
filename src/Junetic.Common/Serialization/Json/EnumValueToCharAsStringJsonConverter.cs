@@ -1,4 +1,5 @@
-﻿using Junetic.Common.Extensions;
+﻿using JetBrains.Annotations;
+using Junetic.Common.Extensions;
 using Newtonsoft.Json;
 
 namespace Junetic.Common.Serialization.Json;
@@ -10,6 +11,7 @@ namespace Junetic.Common.Serialization.Json;
 /// This converter must be applied only on Enums. Is converts enum value to a char and then to a string.
 /// <para> It's useful for enums which has value representation as a char. </para>
 /// </summary>
+[PublicAPI]
 public class EnumValueToCharAsStringJsonConverter : JsonConverter {
 
 	/// <inheritdoc />
