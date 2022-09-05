@@ -10,7 +10,7 @@ public static class EnumExtensions {
 	/// <summary>
 	/// Checks if passed enum value exists in enum. If not - throws an exception
 	/// <para> Converts enum value to a char and then to a string.</para>
-	/// <para> It's useful for enums which has value representation as a char. Example: <see cref="Library.Common.Enums.Aimia.EligibilityFlag"/>: 'Y'/'N'</para>
+	/// <para> It's useful for enums which has value representation as a char. </para>
 	/// </summary>
 	/// <param name="value"></param>
 	/// <returns></returns>

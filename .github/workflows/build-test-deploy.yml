@@ -51,3 +51,11 @@ jobs:
 
       - name: Push generated package to GitHub registry
         run: dotnet nuget push ./package/*.nupkg  --source "https://nuget.pkg.github.com/${{ env.OWNER }}/index.json"  --api-key ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Git tag
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: none
+          WITH_V: true
+          CUSTOM_TAG: ${{ steps.version.outputs.version }}
