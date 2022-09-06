@@ -6,9 +6,10 @@
 public static class EnvironmentWrapper {
 
 	/// <summary>
-	/// name of environment variable which indicates environment application is running in
+	/// Backup name of environment variable which indicates environment application is running in
+	/// <para>Is overriden by DOTNET_ENVIRONMENT and ASPNETCORE_ENVIRONMENT</para>
 	/// </summary>
-	public const string EnvironmentName = "ENVIRONMENT_NAME";
+	public const string BackupEnvironmentName = "ENVIRONMENT_NAME";
 
 	/// <summary>
 	/// Name of Development environment
@@ -22,9 +23,13 @@ public static class EnvironmentWrapper {
 
 	/// <summary>
 	/// Gets environment name which indicates environment application is running in.
-	/// If no <see cref="EnvironmentName"/> found, returns <see cref="Development"/>
+	/// If no Environment name variable found, returns <see cref="Development"/>
 	/// </summary>
 	/// <returns></returns>
-	public static string GetEnvironmentName() => Environment.GetEnvironmentVariable(EnvironmentName) ?? Development;
+	public static string GetEnvironmentName() 
+		=> Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") 
+			?? Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") 
+			?? Environment.GetEnvironmentVariable(BackupEnvironmentName) 
+			?? Development; 
 
 }
